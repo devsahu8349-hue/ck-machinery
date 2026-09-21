@@ -1,10 +1,12 @@
-// Values are injected at build time (see DEPLOY.md):
-//   flutter run --dart-define=SUPABASE_URL=... --dart-define=SUPABASE_ANON_KEY=...
-// The anon key is designed to be public; security comes from the RLS policies.
-// NEVER put the service_role key in this app.
 class AppConfig {
-  static const supabaseUrl = String.fromEnvironment('https://tvhlglisnhslmxtsttsi.supabase.co');
-  static const supabaseAnonKey = String.fromEnvironment('sb_publishable_Z4zsAlHroSkRSbvV_27GdA_mRm-1AWP');
+  static const supabaseUrl = String.fromEnvironment(
+    'SUPABASE_URL',
+    defaultValue: 'https://tvhlglisnhslmxtsttsi.supabase.co',
+  );
+  static const supabaseAnonKey = String.fromEnvironment(
+    'SUPABASE_ANON_KEY',
+    defaultValue: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR2aGxnbGlzbmhzbG14dHN0dHNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwMDc5NTYsImV4cCI6MjEwNTU4Mzk1Nn0.Dwda0EujVC8JxmeRTpGoCfjb_P4wmRPjK38sqQteYiE',
+  );
   static bool get isConfigured =>
       supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
 }
