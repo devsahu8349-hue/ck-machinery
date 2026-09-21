@@ -3,8 +3,8 @@
 // The anon key is designed to be public; security comes from the RLS policies.
 // NEVER put the service_role key in this app.
 class AppConfig {
-  static const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
-  static const supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
+  static const supabaseUrl = String.fromEnvironment('https://tvhlglisnhslmxtsttsi.supabase.co');
+  static const supabaseAnonKey = String.fromEnvironment('sb_publishable_Z4zsAlHroSkRSbvV_27GdA_mRm-1AWP');
   static bool get isConfigured =>
       supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;
 }
